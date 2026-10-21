@@ -1,0 +1,276 @@
+/* Basic page styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #eef1e6;
+  color: #192f29;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.label {
+  margin: 0;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+
+/* Heading and introduction */
+.work-header {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  align-items: end;
+  gap: 45px;
+  margin: 30px 0 40px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: normal;
+  line-height: 1.15;
+  letter-spacing: -2px;
+}
+
+h1 span {
+  color: #78934e;
+}
+
+.introduction {
+  max-width: 280px;
+  margin: 0;
+  justify-self: end;
+  color: #65736e;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Two project columns */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 35px;
+}
+
+.project {
+  min-width: 0;
+}
+
+/* Graphic panels */
+.project-panel {
+  position: relative;
+  height: 335px;
+  padding: 30px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.healthcare {
+  background-color: #245344;
+  color: #edf2df;
+}
+
+.community {
+  background-color: #dfe7ca;
+  color: #192f29;
+}
+
+.category {
+  position: relative;
+  z-index: 1;
+  margin: 8px 0 0;
+  font-size: 8px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  line-height: 1.6;
+}
+
+.panel-title {
+  position: absolute;
+  z-index: 1;
+  bottom: 30px;
+  left: 30px;
+  margin: 0;
+  font-size: 32px;
+  font-weight: normal;
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+.project-number {
+  position: absolute;
+  right: 28px;
+  bottom: 30px;
+  font-size: 12px;
+}
+
+/* Rising bars in the first panel */
+.bars {
+  position: absolute;
+  top: 65px;
+  right: 30px;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 150px;
+  transform: rotate(-16deg);
+}
+
+.bars span {
+  display: block;
+  width: 26px;
+  border-radius: 3px;
+  background-color: #b0ca78;
+}
+
+.bars span:nth-child(1) {
+  height: 50px;
+}
+
+.bars span:nth-child(2) {
+  height: 70px;
+}
+
+.bars span:nth-child(3) {
+  height: 90px;
+}
+
+.bars span:nth-child(4) {
+  height: 110px;
+}
+
+.bars span:nth-child(5) {
+  height: 130px;
+}
+
+.bars span:nth-child(6) {
+  height: 150px;
+}
+
+/* Circles in the second panel */
+.dots {
+  position: absolute;
+  top: 60px;
+  right: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 44px);
+  gap: 14px;
+  transform: rotate(-12deg);
+}
+
+.dots span {
+  display: block;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #8ba264;
+  border-radius: 50%;
+}
+
+.dots span:nth-child(even) {
+  background-color: #abc381;
+  border-color: #abc381;
+}
+
+.dots span:nth-child(5) {
+  background-color: #245344;
+}
+
+/* Text below each panel */
+.project-type {
+  margin: 27px 0 18px;
+  color: #65736e;
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+
+.project-title {
+  margin: 0 0 14px;
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 1.25;
+  letter-spacing: -1px;
+}
+
+.project-description {
+  margin: 0;
+  color: #65736e;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Stack the layout on smaller screens */
+@media (max-width: 760px) {
+  .container {
+    padding: 24px;
+  }
+
+  .work-header {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .introduction {
+    justify-self: start;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* Smaller graphics on narrow phones */
+@media (max-width: 420px) {
+  .container {
+    padding: 18px;
+  }
+
+  h1 {
+    font-size: 32px;
+    letter-spacing: -1.5px;
+  }
+
+  .project-panel {
+    height: 350px;
+    padding: 20px;
+  }
+
+  .category {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  .panel-title {
+    left: 20px;
+    font-size: 28px;
+  }
+
+  .bars {
+    top: 70px;
+    right: 15px;
+    transform: rotate(-16deg) scale(0.75);
+    transform-origin: top right;
+  }
+
+  .dots {
+    right: 20px;
+    transform: rotate(-12deg) scale(0.8);
+    transform-origin: top right;
+  }
+
+  .project-title {
+    font-size: 22px;
+  }
+}

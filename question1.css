@@ -1,0 +1,353 @@
+/* Include padding and borders in element widths. */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #f7f8f3;
+  color: #192f29;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+/* Main two-column layout */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 55px;
+  padding-bottom: 70px;
+}
+
+.intro {
+  min-width: 0;
+}
+
+/* Small heading above the main title */
+.label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+
+.location-dot {
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #78934e;
+}
+
+/* Main heading */
+h1 {
+  margin: 35px 0;
+  font-size: clamp(40px, 5.3vw, 64px);
+  font-weight: normal;
+  line-height: 1.05;
+  letter-spacing: -3px;
+}
+
+h1 span,
+.stat h2 span {
+  color: #78934e;
+}
+
+/* Introduction */
+.description {
+  max-width: 560px;
+  margin: 0;
+  color: #65736e;
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+.description strong {
+  color: #192f29;
+}
+
+/* Navigation links */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  margin-top: 35px;
+}
+
+.buttons a {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  color: #192f29;
+  font-size: 14px;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.buttons .primary {
+  padding: 20px 25px;
+  border-radius: 4px;
+  background-color: #192f29;
+  color: #ffffff;
+}
+
+.primary:hover {
+  background-color: #285a49;
+}
+
+.secondary:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 3px solid #78934e;
+  outline-offset: 5px;
+}
+
+.credentials {
+  margin: 40px 0 0;
+  color: #65736e;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+/* Decorative graphic */
+.graphic {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 42% 42% 8px 8px;
+
+  background-color: #e8edde;
+  background-image:
+    linear-gradient(#dce3d2 1px, transparent 1px),
+    linear-gradient(90deg, #dce3d2 1px, transparent 1px);
+  background-size: 42px 42px;
+
+  /* Allow text sizes to respond to this graphic's width. */
+  container-type: inline-size;
+}
+
+/* Decorative rings */
+.ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  aspect-ratio: 1;
+  border: 1px solid #a0b183;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.outer {
+  width: 80%;
+}
+
+.inner {
+  width: 63%;
+}
+
+/* Central circle */
+.circle {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 48%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #285a49;
+  color: #d4ed82;
+}
+
+.initials {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 90px;
+  font-size: 23cqi;
+  font-style: italic;
+  line-height: 1;
+}
+
+.tagline {
+  margin-top: 14px;
+  font-size: 9px;
+  font-size: 2.2cqi;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+/* Floating labels */
+.badge {
+  position: absolute;
+  z-index: 1;
+  padding: 11px 15px;
+  border: 1px solid #d1d9c6;
+  border-radius: 25px;
+  background-color: #f7f8f3;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+
+.strategy {
+  top: 17%;
+  left: 8%;
+}
+
+.technology {
+  top: 51%;
+  right: 2%;
+}
+
+.people {
+  bottom: 17%;
+  left: 13%;
+}
+
+.spark {
+  position: absolute;
+  top: 10%;
+  right: 9%;
+  color: #87a34f;
+  font-size: 42px;
+  line-height: 1;
+}
+
+.caption {
+  position: absolute;
+  bottom: 6%;
+  left: 6%;
+  font-size: 8px;
+  letter-spacing: 1.3px;
+}
+
+/* Four statistics */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 32px 0;
+  border-top: 1px solid #dce2d5;
+  border-bottom: 1px solid #dce2d5;
+}
+
+.stat {
+  min-width: 0;
+  padding: 10px 25px;
+  border-left: 1px solid #dce2d5;
+}
+
+.stat:first-child {
+  padding-left: 0;
+  border-left: none;
+}
+
+.stat h2 {
+  margin: 0 0 15px;
+  font-size: 38px;
+  font-weight: normal;
+  line-height: 1.1;
+  letter-spacing: -2px;
+}
+
+.stat p {
+  margin: 0;
+  color: #65736e;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* Tablet and phone layout */
+@media (max-width: 760px) {
+  .container {
+    padding: 24px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding-bottom: 45px;
+  }
+
+  h1 {
+    font-size: clamp(40px, 8vw, 58px);
+    letter-spacing: -2px;
+  }
+
+  .graphic {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 25px;
+  }
+
+  .stat:nth-child(3) {
+    padding-left: 0;
+    border-left: none;
+  }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+  .container {
+    padding: 18px;
+  }
+
+  .label {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .description {
+    font-size: 17px;
+  }
+
+  .badge {
+    padding: 8px 10px;
+    font-size: 6px;
+    letter-spacing: 1px;
+  }
+
+  .caption {
+    font-size: 6px;
+    letter-spacing: 1px;
+  }
+
+  .spark {
+    font-size: 30px;
+  }
+
+  .stat {
+    padding-right: 10px;
+    padding-left: 15px;
+  }
+
+  .stat h2 {
+    font-size: 32px;
+  }
+}
